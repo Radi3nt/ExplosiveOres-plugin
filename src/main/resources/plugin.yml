@@ -1,0 +1,11 @@
+name: ExplosiveOres
+version: ${project.version}
+main: fr.radi3nt.explosiveores.MainExplosiveOres
+api-version: 1.13
+prefix: ExplosiveOres
+authors: [Radi3nt]
+description: This plugin makes ores expload when the player is in range of it. Ores are in counter-attack !
+commands:
+  exploseore:
+    description: Main command
+    aliases: [exore, eo, exo, eore]

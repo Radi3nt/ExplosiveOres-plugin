@@ -1,0 +1,33 @@
+prefix: ""
+range: 10
+
+Blocks:
+  OBSIDIAN:
+    time: 15
+    force: 15
+  NETHER_QUARZ_ORE:
+    time: 3
+    force: 9
+  EMERALD_ORE:
+    time: 5
+    force: 15
+  DIAMOND_ORE:
+    time: 5
+    force: 11
+  REDSTONE_ORE:
+    time: 4
+    force: 10
+  GOLD_ORE:
+    time: 4
+    force: 9.5
+  LAPIS_ORE:
+    time: 3
+    force: 9
+  IRON_ORE:
+    time: 3
+    force: 9
+  COAL_ORE:
+    time: 2
+    force: 8.25
+
+activated: false
