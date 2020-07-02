@@ -102,15 +102,15 @@ public class Runner extends BukkitRunnable {
                 TimePass.remove(blockToExpload);
             }
             if (timeleft==3 && TimePass.get(blockToExpload)>=3) {
-                blockToExpload.getWorld().playSound(blockToExpload, Sound.ENTITY_CREEPER_PRIMED, 100.0F, 0.50F);
+                blockToExpload.getWorld().playSound(blockToExpload, Sound.ENTITY_CREEPER_PRIMED, SoundCategory.BLOCKS, 1F, 0.50F);
                 TimePass.put(blockToExpload, 2);
             }
             if (timeleft==2 && TimePass.get(blockToExpload)>=2) {
-                blockToExpload.getWorld().playSound(blockToExpload, Sound.BLOCK_NOTE_BLOCK_HAT, 100.0F, 1F);
+                blockToExpload.getWorld().playSound(blockToExpload, Sound.BLOCK_NOTE_BLOCK_HAT, SoundCategory.BLOCKS, 1F, 1F);
                 TimePass.put(blockToExpload, 1);
             }
             if (timeleft==1 && TimePass.get(blockToExpload)>=1) {
-                blockToExpload.getWorld().playSound(blockToExpload, Sound.BLOCK_NOTE_BLOCK_HAT, 100.0F, 1F);
+                blockToExpload.getWorld().playSound(blockToExpload, Sound.BLOCK_NOTE_BLOCK_HAT, SoundCategory.BLOCKS, 1F, 1F);
                 TimePass.put(blockToExpload, 0);
             }
 
