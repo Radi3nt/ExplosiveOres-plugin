@@ -14,19 +14,23 @@ public class ExplosiveOreCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (args.length > 0) {
-            if (args[0].equals("start")) {
-                plugin.getConfig().set("activated", true);
-                plugin.saveConfig();
-                sender.sendMessage(ChatColor.DARK_GREEN + "[ExplosivesOres]" + ChatColor.GOLD + " Explosions activated");
-            }
-            if (args[0].equals("stop")) {
-                plugin.getConfig().set("activated", false);
-                plugin.saveConfig();
-                sender.sendMessage(ChatColor.DARK_GREEN + "[ExplosivesOres]" + ChatColor.GOLD + " Explosions deactivated");
+        if (sender.hasPermission("exo.manage")) {
+            if (args.length > 0) {
+                if (args[0].equals("start")) {
+                    plugin.getConfig().set("activated", true);
+                    plugin.saveConfig();
+                    sender.sendMessage(ChatColor.DARK_GREEN + "[ExplosivesOres]" + ChatColor.GOLD + " Explosions activated");
+                }
+                if (args[0].equals("stop")) {
+                    plugin.getConfig().set("activated", false);
+                    plugin.saveConfig();
+                    sender.sendMessage(ChatColor.DARK_GREEN + "[ExplosivesOres]" + ChatColor.GOLD + " Explosions deactivated");
+                }
+            } else {
+                sender.sendMessage(ChatColor.DARK_GREEN + "[ExplosivesOres]" + ChatColor.RED + " This command require an argument");
             }
         } else {
-            sender.sendMessage(ChatColor.DARK_GREEN + "[ExplosivesOres]" + ChatColor.RED + " This command require an argument");
+            sender.sendMessage(ChatColor.DARK_GREEN + "[ExplosivesOres]" + ChatColor.RED + " No permission");
         }
         return true;
     }
