@@ -4,6 +4,7 @@ import fr.radi3nt.explosiveores.commands.ExplosiveOreCommand;
 import fr.radi3nt.explosiveores.listeners.OnExplosionEvent;
 import fr.radi3nt.explosiveores.listeners.OnOresInRangeListener;
 import fr.radi3nt.explosiveores.runnables.Runner;
+import fr.radi3nt.explosiveores.tab.ExplosiveOreTabCompleter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -62,6 +63,7 @@ public final class MainExplosiveOres extends JavaPlugin {
 
     private void RegisterCommands() {
         getCommand("exploseore").setExecutor(new ExplosiveOreCommand());
+        getCommand("exploseore").setTabCompleter(new ExplosiveOreTabCompleter());
     }
 
     private void RegisterEvents() {

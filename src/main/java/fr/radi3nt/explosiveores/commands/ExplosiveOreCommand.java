@@ -1,6 +1,7 @@
 package fr.radi3nt.explosiveores.commands;
 
 import fr.radi3nt.explosiveores.MainExplosiveOres;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -16,14 +17,16 @@ public class ExplosiveOreCommand implements CommandExecutor {
         if (args.length > 0) {
             if (args[0].equals("start")) {
                 plugin.getConfig().set("activated", true);
-                //message
+                plugin.saveConfig();
+                sender.sendMessage(ChatColor.DARK_GREEN + "[ExplosivesOres]" + ChatColor.GOLD + " Explosions activated");
             }
             if (args[0].equals("stop")) {
                 plugin.getConfig().set("activated", false);
-                //message
+                plugin.saveConfig();
+                sender.sendMessage(ChatColor.DARK_GREEN + "[ExplosivesOres]" + ChatColor.GOLD + " Explosions deactivated");
             }
         } else {
-            //error
+            sender.sendMessage(ChatColor.DARK_GREEN + "[ExplosivesOres]" + ChatColor.RED + " This command require an argument");
         }
         return true;
     }

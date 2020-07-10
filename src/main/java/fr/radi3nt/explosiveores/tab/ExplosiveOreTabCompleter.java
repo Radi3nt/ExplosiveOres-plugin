@@ -11,7 +11,7 @@ public class ExplosiveOreTabCompleter implements TabCompleter {
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         ArrayList<String> commands = new ArrayList<>();
-        if (args.length==1) {
+        if (args.length==0) {
             commands.add("start");
             commands.add("stop");
         }
